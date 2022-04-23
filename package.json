@@ -11,7 +11,7 @@
     },
     "scripts": {
         "start": "node index.js",
-        "test": "node test.js",
+        "test": "node test.js"
     },
     "homepage": "https://github.com/RobbyCatur/robby-md",
     "author": {
