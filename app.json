@@ -1,0 +1,7 @@
+{
+  "name": "robby-md",
+  "description": "simple whatsapp bot",
+  "repository": "https://github.com/RobbyCatur/robby-md",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["bot", "whatsapp", "whatsapp-bot"]
+}
