@@ -122,7 +122,7 @@ module.exports = {
                 console.error(e)
             }
                if (settings.nyimak) return
-     	       if (!m.fromMe && setting.self) return
+     	       if (!m.fromMe && settings.self) return
       	       if (settings.pconly && m.chat.endsWith('g.us')) return
      	       if (settings.gconly && !m.chat.endsWith('g.us')) return
     	       if (typeof m.text !== 'string') m.text = ''
@@ -165,7 +165,7 @@ module.exports = {
                 let plugin = global.plugins[name]
                 if (!plugin) continue
                 if (plugin.disabled) continue
-                if (!setting.restrict) if (plugin.tags && plugin.tags.includes('admin')) continue
+                if (!settings.restrict) if (plugin.tags && plugin.tags.includes('admin')) continue
                 const str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
                 let _prefix = plugin.customPrefix ? plugin.customPrefix : conn.prefix ? conn.prefix : global.prefix
                 let match = (_prefix instanceof RegExp ? // RegExp Mode?
