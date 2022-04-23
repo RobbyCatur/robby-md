@@ -125,7 +125,7 @@ module.exports = {
      	       if (!m.fromMe && setting.self) return
       	       if (setting.pconly && m.chat.endsWith('g.us')) return
      	       if (setting.gconly && !m.chat.endsWith('g.us')) return
-    	       if (typeof m.text !== 'string') m.text = '
+    	       if (typeof m.text !== 'string') m.text = ''
                for (let name in global.plugins) {
                 let plugin = global.plugins[name]
                 if (!plugin) continue
