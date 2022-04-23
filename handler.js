@@ -29,8 +29,8 @@ module.exports = {
         global.fla = pickRandom(global.flaaa)
         global.namabot = conn.user.name
         global.packname = global.namabot
-        global.author = global.data.owner
-        global.wm2 = global.data.namabot + ' ' + global.data.owner
+        global.author = 'Robby Catur'
+        global.wm2 = global.data.namabot + ' ' + 'Robby Catur'
         global.wm = namabot + 'Robby Catur'
         global.kontak2 = [
         ['6282245409072', 'Robby Catur', 'Creator Bot', 'robbycatur3784@gmail.com', true],
