@@ -57,8 +57,8 @@ module.exports = {
           	    regTime: -1,
          	    afk: -1,
      	            afkReason: '',
-		    premium: false
-		    premiumTime: 0
+		    premium: false,
+		    premiumTime: 0,
         	    banned: false,
         	    level: 0,
         	    role: 'Beginner',
