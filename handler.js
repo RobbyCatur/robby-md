@@ -527,7 +527,7 @@ Sedang mengirim ulang pesan
         })
         await this.delay(1000)
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
-    }
+    
 }
 
 global.dfail = async (type, m, conn) => {
