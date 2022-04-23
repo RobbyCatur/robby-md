@@ -97,26 +97,26 @@ module.exports = {
          	  viewonce: false,
         }
 
-                let settings = global.db.data.settings[this.user.jid]
-                if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
-                if (settings) {
-                   if (!('anticall' in settings)) settings.anticall = false
-       		   if (!('autoread' in settings)) settings.autoread = false
-        	   if (!('nyimak' in settings)) settings.nyimak = false
-       		   if (!('restrict' in settings)) settings.restrict = false
-       		   if (!('self' in settings)) settings.self = false
-       		   if (!('pconly' in settings)) settings.pconly = false
-       		   if (!('gconly' in settings)) settings.gconly = false
-       		   if (!('jadibot' in settings)) settings.jadibot = false
-       		 } else global.db.data.settings[this.user.jid] = {
-       		   anticall: false,
-       		   autoread: false,
-       		   nyimak: false,
-        	   restrict: false,
-       		   self: false,
-       		   pconly: false,
-        	   gconly: false,
-        	   jadibot: false,
+        var setting = global.db.data.settings[this.user.jid]
+        if (typeof setting !== 'object') global.db.data.settings[this.user.jid] = {}
+        if (setting) {
+          if (!('anticall' in setting)) setting.anticall = false
+          if (!('autoread' in setting)) setting.autoread = false
+          if (!('nyimak' in setting)) setting.nyimak = false
+          if (!('restrict' in setting)) setting.restrict = false
+          if (!('self' in setting)) setting.self = false
+          if (!('pconly' in setting)) setting.pconly = false
+          if (!('gconly' in setting)) setting.gconly = false
+          if (!('jadibot' in setting)) setting.jadibot = false
+        } else global.db.data.settings[this.user.jid] = {
+          anticall: false,
+          autoread: false,
+          nyimak: false,
+          restrict: false,
+          self: false,
+          pconly: false,
+          gconly: false,
+          jadibot: false,
                 }
             } catch (e) {
                 console.error(e)
