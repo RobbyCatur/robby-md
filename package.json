@@ -22,7 +22,7 @@
         "url": "git+https://github.com/RobbyCatur/robby-md.git"
     },
     "bugs": {
-        "url": "https://github.com/RobbyCatur/robby-md"
+        "url": "https://github.com/RobbyCatur/robby-md/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
