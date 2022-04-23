@@ -1,4 +1,4 @@
-let fa = require('fs')
+let fs = require('fs')
 let chalk = require('chalk')
 
 global.owner = ['6282245409072'] // Put your number here
