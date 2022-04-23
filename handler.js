@@ -97,34 +97,34 @@ module.exports = {
          	  viewonce: false,
         }
 
-                let settings = global.db.data.settings[this.user.jid]
-                if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
-                if (settings) {
-                   if (!('anticall' in setting)) setting.anticall = false
-       		   if (!('autoread' in setting)) setting.autoread = false
-        	   if (!('nyimak' in setting)) setting.nyimak = false
-       		   if (!('restrict' in setting)) setting.restrict = false
-       		   if (!('self' in setting)) setting.self = false
-       		   if (!('pconly' in setting)) setting.pconly = false
-       		   if (!('gconly' in setting)) setting.gconly = false
-       		   if (!('jadibot' in setting)) setting.jadibot = false
-       		 } else global.db.data.settings[this.user.jid] = {
-       		   anticall: false,
-       		   autoread: false,
-       		   nyimak: false,
-        	   restrict: false,
-       		   self: false,
-       		   pconly: false,
-        	   gconly: false,
-        	   jadibot: false,
-                }
-            } catch (e) {
-                console.error(e)
-            }
-               if (setting.nyimak) return
-     	       if (!m.fromMe && setting.self) return
-      	       if (setting.pconly && m.chat.endsWith('g.us')) return
-     	       if (setting.gconly && !m.chat.endsWith('g.us')) return
+        var setting = global.db.data.settings[this.user.jid]
+        if (typeof setting !== 'object') global.db.data.settings[this.user.jid] = {}
+        if (setting) {
+          if (!('anticall' in setting)) setting.anticall = false
+          if (!('autoread' in setting)) setting.autoread = false
+          if (!('nyimak' in setting)) setting.nyimak = false
+          if (!('restrict' in setting)) setting.restrict = false
+          if (!('self' in setting)) setting.self = false
+          if (!('pconly' in setting)) setting.pconly = false
+          if (!('gconly' in setting)) setting.gconly = false
+          if (!('jadibot' in setting)) setting.jadibot = false
+        } else global.db.data.settings[this.user.jid] = {
+          anticall: false,
+          autoread: false,
+          nyimak: false,
+          restrict: false,
+          self: false,
+          pconly: false,
+          gconly: false,
+          jadibot: false,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+      if (setting.nyimak) return
+      if (!m.fromMe && setting.self) return
+      if (setting.pconly && m.chat.endsWith('g.us')) return
+      if (setting.gconly && !m.chat.endsWith('g.us')) return
     	       if (typeof m.text !== 'string') m.text = ''
                for (let name in global.plugins) {
                 let plugin = global.plugins[name]
