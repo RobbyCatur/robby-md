@@ -432,11 +432,14 @@ module.exports = {
             //await this.sendMessage(id, { text, mentions: this.parseMention(text) })
         }
     },
-    async delete(m) {
-    if (m.key.fromMe) return
-    let chat = global.db.data.chats[m.key.remoteJid]
-    if (chat.delete) return
-     await this.reply(m.key.remoteJid, `
+    async delete({ remoteJid, fromMe, id, participant }) {
+        if (fromMe) return
+        let chats = Object.entries(conn.chats).find(([user, data]) => data.messages && data.messages[id])
+        if (!chats) return
+        let msg = JSON.parse(chats[1].messages[id])
+        let chat = global.db.data.chats[msg.key.remoteJid] || {}
+        if (chat.delete) return
+        this.sendButton(msg.key.remoteJid, `
 Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
 
 Sedang mengirim ulang pesan
@@ -445,7 +448,9 @@ Sedang mengirim ulang pesan
         mentionedJid: [m.participant]
       }
     })
-    this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
+        await this.delay(1000)
+        this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
+    }
 }
 
 global.dfail = async (type, m, conn) => {
