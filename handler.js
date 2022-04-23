@@ -121,10 +121,10 @@ module.exports = {
             } catch (e) {
                 console.error(e)
             }
-               if (setting.nyimak) return
+               if (settings.nyimak) return
      	       if (!m.fromMe && setting.self) return
-      	       if (setting.pconly && m.chat.endsWith('g.us')) return
-     	       if (setting.gconly && !m.chat.endsWith('g.us')) return
+      	       if (settings.pconly && m.chat.endsWith('g.us')) return
+     	       if (settings.gconly && !m.chat.endsWith('g.us')) return
     	       if (typeof m.text !== 'string') m.text = ''
                for (let name in global.plugins) {
                 let plugin = global.plugins[name]
