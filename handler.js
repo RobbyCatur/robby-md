@@ -30,8 +30,8 @@ module.exports = {
         global.namabot = conn.user.name
         global.packname = global.namabot
         global.author = 'Robby Catur'
-        global.wm2 = global.data.namabot + ' ' + 'Robby Catur'
-        global.wm = namabot + 'Robby Catur'
+        global.wm2 = 'Pudge Invoker' + ' ' + 'Robby Catur'
+        global.wm = 'Pudge Invoker' + 'Robby Catur'
         global.kontak2 = [
         ['6282245409072', 'Robby Catur', 'Creator Bot', 'robbycatur3784@gmail.com', true],
         ['6281913468596', await this.getName('6283823916413@s.whatsapp.net'), 'Nomor Bot', '', true],
