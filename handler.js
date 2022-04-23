@@ -521,13 +521,14 @@ module.exports = {
         if (chat.delete) return
         this.reply(msg.key.remoteJid, `
 Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
+
 Sedang mengirim ulang pesan
-'.trim(), msg, {
+`.trim(), msg, {
             mentions: [participant]
         })
         await this.delay(1000)
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
-    
+    }
 }
 
 global.dfail = async (type, m, conn) => {
