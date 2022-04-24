@@ -5,7 +5,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
  // if (!isOwner) throw `Maaf, sementara fitur ini dinonaktifkan dulu karena terdapat bug`
   ds.Tiktok(args[0]).then(r => {
     let me = conn.user.name
-    await conn.sendFile(m.chat, r.no_wm, '', `${me} Tiktok Downloader`, m)
+    conn.sendFile(m.chat, r.no_wm, '', `${me} Tiktok Downloader`, m)
     })
 //  if (res.status !== 200) throw `Server error!`
 //  let json = await res.json()
