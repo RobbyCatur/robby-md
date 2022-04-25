@@ -7,7 +7,6 @@ let handler = async(m, { conn, args, isPrems, isOwner }) => {
     let server = (args[1] || servers[0]).toLowerCase()
     let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
     let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-    m.reply(wait)
     if (!isLimit) await conn.sendMessage(m.chat, { document: { url: dl_link}, mimetype: 'audio/mpeg', fileName: `${title}.mp3`}, {quoted: m})
 }
 handler.help = ['ytmp3 <query>']
